@@ -17,4 +17,6 @@ public class UserController {
 	public String inoutLogin(){
 		return "user/login";
 	}
+	
+	
 }
