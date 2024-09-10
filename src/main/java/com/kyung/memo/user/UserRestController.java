@@ -83,7 +83,7 @@ public class UserRestController {
 			// 로그인이 되었다는 정보를 저장
 			// 어떤 페이지에서든 해당 정보를 사용할 수 있다
 			// 로그인된 사용자 정보를 저장해서 사용자 정보 기반의 페이지를 구성할 수 있다
-			
+			// (String, Obiect)
 			session.setAttribute("userId", user.getId()); // session에 실제 유저의 pk값 저장
 			session.setAttribute("userName", user.getName()); // session에 실제 유저의 이름 저장
 			
