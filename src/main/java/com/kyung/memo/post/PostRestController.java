@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.kyung.memo.post.domain.Post;
 import com.kyung.memo.post.service.PostService;
@@ -27,12 +28,13 @@ public class PostRestController {
 	public Map<String, String> createMemo(
 			@RequestParam("title") String title
 			, @RequestParam("contents") String contents
+			, @RequestParam(value = "imagefile", required=false) MultipartFile file
 			, HttpSession session){ // HttpServletRequest request 대신 이렇게 사용하면 간단하게 사용할 수 있음
 		
 		// int로 다운캐스팅
 		int userId = (Integer)session.getAttribute("userId"); // 로그인할 때 정한 것
 		
-		Post post = postService.addPost(userId, title, contents);
+		Post post = postService.addPost(userId, title, contents, file);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
