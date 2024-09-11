@@ -36,7 +36,8 @@
  	<select id="selectUser" parameterType = "map"
  	resultType = "com.kyung.memo.user.domain.User">
  		SELECT
- 			`loginId`
+ 		     `id`
+ 			, `loginId`
  			, `password`
  			, `name`
  			, `email`

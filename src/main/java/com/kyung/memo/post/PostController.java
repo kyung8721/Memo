@@ -19,7 +19,7 @@ public class PostController {
 	
 	private PostService postService;
 	
-	public PostController(PostService posrtService) {
+	public PostController(PostService postService) {
 		this.postService = postService;
 	}
 	
@@ -40,7 +40,7 @@ public class PostController {
 	
 	@GetMapping("/create-view")
 	public String inputMemo() {
-		return "post/input";
+		return "post/create";
 	}
 	
 	@GetMapping("/detail-view")
