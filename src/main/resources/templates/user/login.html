@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="ko" 
-    xmlns:th="http://www.thymeleaf.org" 
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layouts/default}">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/default}">
 
-	<section layout:fragment="contents" class="contents d-flex justify-content-center my-5">
-		<div class="input-box p-5 rounded-lg">
-			<h2 class="text-center">로그인</h2>
-			<input type="text" placeholder="아이디를 입력하세요" class="form-control mt-4" id="loginInput">
-			<input type="password" placeholder="비밀번호를 입력하세요" class="form-control mt-2" id="passwordInput">
-			<button type="button" class="btn btn-secondary btn-block mt-3" id="loginBtn">로그인</button>
-		</div>
-	</section>
-	
-	<script layout:fragment = "script">
+<section layout:fragment="contents"
+	class="contents d-flex justify-content-center my-5">
+	<div class="input-box p-5 rounded-lg">
+		<h2 class="text-center">로그인</h2>
+		<input type="text" placeholder="아이디를 입력하세요" class="form-control mt-4"
+			id="loginInput"> <input type="password"
+			placeholder="비밀번호를 입력하세요" class="form-control mt-2"
+			id="passwordInput">
+		<button type="button" class="btn btn-secondary btn-block mt-3"
+			id="loginBtn">로그인</button>
+	</div>
+</section>
+
+<script layout:fragment="script">
 		$(document).ready(function(){
 			$("#loginBtn").on("click", function(){
 				let loginId = $("#loginInput").val();
@@ -47,5 +50,5 @@
 			}); // 로그인 버튼 클릭 이벤트 끝
 		});//문서 준비 끝
 	</script>
-	
+
 </html>

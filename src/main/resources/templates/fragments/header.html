@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
-		<header class="d-flex align-items-center justify-content-between">
-			<h1 class="ml-4">Memo</h1>
-			
-			
-			<div th:if="${session.userId != null}"><span th:text="${session.userName}">사용자</span><a href="/user/logout" class="ml-2">로그아웃</a></div>
-		</header>
+<html xmlns:th="http://www.thymeleaf.org">
+<header class="d-flex align-items-center justify-content-between">
+	<h1 class="ml-4">Memo</h1>
+
+
+	<div th:if="${session.userId != null}">
+		<span th:text="${session.userName}">사용자</span><a href="/user/logout"
+			class="ml-2">로그아웃</a>
+	</div>
+</header>
 </html>

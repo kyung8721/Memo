@@ -2,53 +2,54 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- 
- <mapper namespace = "com.kyung.memo.user.repository.UserRepository">
- 
- 	<insert id="insertUser" parameterType="map">
- 		INSERT INTO
- 			`user`
- 		(
- 			`loginId`
- 			, `password`
- 			, `name`
- 			, `email`
- 		)
- 		VALUE
- 		(
- 			#{loginId}
- 			, #{password}
- 			, #{name}
- 			, #{email}
- 		)
- 	</insert>
- 	
- 	<select id="selectCountByLoginId" parameterType="string" resultType="int">
- 		SELECT
- 			count(*)
- 		FROM
- 			`user`
- 		WHERE
- 			`loginId` = #{loginId}
- 	
- 	</select>
- 	
- 	<select id="selectUser" parameterType = "map"
- 	resultType = "com.kyung.memo.user.domain.User">
- 		SELECT
- 		     `id`
- 			, `loginId`
- 			, `password`
- 			, `name`
- 			, `email`
- 			, `createdAt`
- 			, `updatedAt`
- 		FROM
- 			`user`
- 		WHERE
- 			`loginId` = #{loginId}
- 			AND `password` = #{password}
- 		
- 	
- 	</select>
- </mapper>
+
+<mapper namespace="com.kyung.memo.user.repository.UserRepository">
+
+	<insert id="insertUser" parameterType="map">
+		INSERT INTO
+		`user`
+		(
+		`loginId`
+		, `password`
+		, `name`
+		, `email`
+		)
+		VALUE
+		(
+		#{loginId}
+		, #{password}
+		, #{name}
+		, #{email}
+		)
+	</insert>
+
+	<select id="selectCountByLoginId" parameterType="string"
+		resultType="int">
+		SELECT
+		count(*)
+		FROM
+		`user`
+		WHERE
+		`loginId` = #{loginId}
+
+	</select>
+
+	<select id="selectUser" parameterType="map"
+		resultType="com.kyung.memo.user.domain.User">
+		SELECT
+		`id`
+		, `loginId`
+		, `password`
+		, `name`
+		, `email`
+		, `createdAt`
+		, `updatedAt`
+		FROM
+		`user`
+		WHERE
+		`loginId` = #{loginId}
+		AND `password` = #{password}
+
+
+	</select>
+</mapper>
